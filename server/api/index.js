@@ -1,6 +1,8 @@
 const router = require('express').Router();
 
-// routes here
+// router.post('/foodinspection', (req, res, next) => {
+//
+// })
 
 router.use((req, res, next) => {
   const err = new Error('API route not found!');

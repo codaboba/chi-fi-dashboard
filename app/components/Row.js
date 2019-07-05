@@ -1,20 +1,31 @@
 import React from 'react';
-import { test } from '../../server/services.js';
+// import styles from '../styles/Table.css';
 
-class Row extends React.Component {
-  constructor() {
-    super();
-    this.state = { result: '' };
-  }
+const styles = {
+  row: {
+    padding: '12px 20px',
+  },
+};
 
-  async componentDidMount() {
-    const [result] = await test();
-    this.setState({ result });
-  }
-
-  render() {
-    return <h1>{this.state.result.aka_name}</h1>;
-  }
-}
+const Row = props => {
+  const {
+    inspection_id,
+    aka_name,
+    address,
+    zip,
+    city,
+    inspection_date,
+  } = props;
+  return (
+    <tr>
+      <td style={styles.row}>{inspection_id}</td>
+      <td style={styles.row}>{aka_name}</td>
+      <td style={styles.row}>{address}</td>
+      <td style={styles.row}>{city}</td>
+      <td style={styles.row}>{zip}</td>
+      <td style={styles.row}>{inspection_date}</td>
+    </tr>
+  );
+};
 
 export default Row;

@@ -1,6 +1,13 @@
 const db = require('../database');
-// require in models
+const Sequelize = require('sequelize');
 
-// define model associations here and export them
+const FoodInspection = db.define('food_inspection', {
+  inspection_id: Sequelize.INTEGER,
+  dba_name: Sequelize.TEXT,
+  address: Sequelize.TEXT,
+  city: Sequelize.TEXT,
+  zip: Sequelize.INTEGER,
+  inspection_date: Sequelize.DATE,
+});
 
-module.exports = { db };
+module.exports = db;
